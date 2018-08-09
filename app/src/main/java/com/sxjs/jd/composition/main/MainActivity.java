@@ -5,12 +5,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.widget.FrameLayout;
 
+import com.sxjs.common.base.BaseActivity;
 import com.sxjs.common.widget.bottomnavigation.BadgeItem;
 import com.sxjs.common.widget.bottomnavigation.BottomNavigationBar;
 import com.sxjs.common.widget.bottomnavigation.BottomNavigationItem;
 import com.sxjs.jd.MainDataManager;
 import com.sxjs.jd.R;
-import com.sxjs.common.base.BaseActivity;
 import com.sxjs.jd.composition.main.classificationfragment.ClassificationFragment;
 import com.sxjs.jd.composition.main.findfragment.FindFragment;
 import com.sxjs.jd.composition.main.homefragment.MainHomeFragment;
@@ -39,6 +39,8 @@ public class MainActivity extends BaseActivity implements MainContract.View, Bot
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        UltimateBar ultimateBar = new UltimateBar(this);
+//        ultimateBar.setImmersionBar();
         setContentView(R.layout.activity_main);
         unbinder = ButterKnife.bind(this);
         mFragmentManager = getSupportFragmentManager();

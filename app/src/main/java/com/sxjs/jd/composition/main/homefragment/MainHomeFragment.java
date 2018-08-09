@@ -10,14 +10,15 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
+import com.sxjs.common.base.BaseFragment;
 import com.sxjs.common.base.baseadapter.BaseQuickAdapter;
+import com.sxjs.common.statuscompat.StatusBarCompat;
 import com.sxjs.common.util.ScreenUtil;
 import com.sxjs.common.widget.headerview.JDHeaderView;
 import com.sxjs.common.widget.pulltorefresh.PtrFrameLayout;
 import com.sxjs.common.widget.pulltorefresh.PtrHandler;
 import com.sxjs.jd.MainDataManager;
 import com.sxjs.jd.R;
-import com.sxjs.common.base.BaseFragment;
 import com.sxjs.jd.entities.HomeIndex;
 
 import javax.inject.Inject;
@@ -72,6 +73,10 @@ public class MainHomeFragment extends BaseFragment implements JDHeaderView.Refre
      * 初始化下拉刷新及滚动距离title发生的改变
      */
     private void initBase() {
+
+        //让状态栏透明
+        StatusBarCompat.translucentStatusBar(getActivity(), true);
+
         DaggerHomeFragmentComponent.builder()
                 .appComponent(getAppComponent())
                 .homePresenterModule(new HomePresenterModule(this, MainDataManager.getInstance(mDataManager)))
@@ -89,7 +94,7 @@ public class MainHomeFragment extends BaseFragment implements JDHeaderView.Refre
                 super.onScrolled(recyclerView, dx, dy);
                 distanceY += dy;
                 if (distanceY > ScreenUtil.dip2px(mActivity, 20)) {
-                    homeTitleBarBgView.setBackgroundColor(getResources().getColor(R.color.white));
+                    homeTitleBarBgView.setBackgroundColor(getResources().getColor(R.color.color_orange_red));
                     if (Build.VERSION.SDK_INT > 10) {
                         homeTitleBarBgView.setAlpha(distanceY * 1.0f / ScreenUtil.dip2px(mActivity, 100));
                     }

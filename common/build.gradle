@@ -67,6 +67,7 @@ dependencies {
     // router
     compile "com.alibaba:arouter-api:$rootProject.arouterVersion"
     annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
-
+    //沉浸式状态栏
+    compile 'org.zackratos:ultimatebar:1.0.3'
 
 }
