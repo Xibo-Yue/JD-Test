@@ -26,7 +26,9 @@ public class DialogUtil {
         final Dialog dialog = new Dialog(context , R.style.NoBackGroundDialog);
         dialog.show();
         dialog.setCanceledOnTouchOutside(false);
-        if(listener != null) dialog.setOnCancelListener(listener);
+        if(listener != null) {
+            dialog.setOnCancelListener(listener);
+        }
         Window window = dialog.getWindow();
         assert window != null;
         window.setGravity(Gravity.CENTER);

@@ -49,7 +49,9 @@ public class BaseFragment extends Fragment{
     }
 
     protected void showJDLoadingDialog(){
-        if(dialog == null)dialog = DialogUtil.createJDLoadingDialog(mActivity, null);
+        if(dialog == null) {
+            dialog = DialogUtil.createJDLoadingDialog(mActivity, null);
+        }
         if(!dialog.isShowing()){
             dialog.show();
         }
@@ -68,7 +70,9 @@ public class BaseFragment extends Fragment{
             unbinder.unbind();
         }
         if(dialog != null){
-            if(dialog.isShowing())dialog.dismiss();
+            if(dialog.isShowing()) {
+                dialog.dismiss();
+            }
             dialog = null;
         }
     }

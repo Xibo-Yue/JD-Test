@@ -29,7 +29,6 @@ public class MainPresenter extends BasePresenter implements MainContract.Present
     public MainPresenter(MainDataManager mDataManager, MainContract.View view) {
         this.mDataManager = mDataManager;
         this.mMainView = view;
-
     }
 
 

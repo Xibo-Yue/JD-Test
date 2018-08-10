@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.widget.FrameLayout;
 
 import com.sxjs.common.base.BaseActivity;
+import com.sxjs.common.statuscompat.StatusBarCompat;
 import com.sxjs.common.widget.bottomnavigation.BadgeItem;
 import com.sxjs.common.widget.bottomnavigation.BottomNavigationBar;
 import com.sxjs.common.widget.bottomnavigation.BottomNavigationItem;
@@ -41,6 +42,8 @@ public class MainActivity extends BaseActivity implements MainContract.View, Bot
         super.onCreate(savedInstanceState);
 //        UltimateBar ultimateBar = new UltimateBar(this);
 //        ultimateBar.setImmersionBar();
+        //让状态栏透明
+        StatusBarCompat.translucentStatusBar(this, true);
         setContentView(R.layout.activity_main);
         unbinder = ButterKnife.bind(this);
         mFragmentManager = getSupportFragmentManager();
@@ -82,7 +85,7 @@ public class MainActivity extends BaseActivity implements MainContract.View, Bot
     private void initBottomNavigation() {
         BadgeItem numberBadgeItem = new BadgeItem()
                 .setBorderWidth(4)
-                .setBackgroundColorResource(R.color.colorAccent)
+                .setBackgroundColorResource(R.color.color_orange_red)
                 .setText("99+")
                 .setHideOnSelect(false);
 
@@ -94,11 +97,11 @@ public class MainActivity extends BaseActivity implements MainContract.View, Bot
 
 
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.axh, "").setInactiveIconResource(R.drawable.axg).setActiveColorResource(R.color.colorAccent))
-                .addItem(new BottomNavigationItem(R.drawable.axd, "").setInactiveIconResource(R.drawable.axc).setActiveColorResource(R.color.colorAccent))
-                .addItem(new BottomNavigationItem(R.drawable.axf, "").setInactiveIconResource(R.drawable.axe).setActiveColorResource(R.color.colorAccent))
-                .addItem(new BottomNavigationItem(R.drawable.axb, "").setInactiveIconResource(R.drawable.axa).setActiveColorResource(R.color.colorAccent).setBadgeItem(numberBadgeItem))
-                .addItem(new BottomNavigationItem(R.drawable.axj, "").setInactiveIconResource(R.drawable.axi).setActiveColorResource(R.color.colorAccent))
+                .addItem(new BottomNavigationItem(R.drawable.axh, "").setInactiveIconResource(R.drawable.axg).setActiveColorResource(R.color.color_orange_red))
+                .addItem(new BottomNavigationItem(R.drawable.axd, "").setInactiveIconResource(R.drawable.axc).setActiveColorResource(R.color.color_orange_red))
+                .addItem(new BottomNavigationItem(R.drawable.axf, "").setInactiveIconResource(R.drawable.axe).setActiveColorResource(R.color.color_orange_red))
+                .addItem(new BottomNavigationItem(R.drawable.axb, "").setInactiveIconResource(R.drawable.axa).setActiveColorResource(R.color.color_orange_red).setBadgeItem(numberBadgeItem))
+                .addItem(new BottomNavigationItem(R.drawable.axj, "").setInactiveIconResource(R.drawable.axi).setActiveColorResource(R.color.color_orange_red))
                 .setFirstSelectedPosition(0)
                 .initialise();
 

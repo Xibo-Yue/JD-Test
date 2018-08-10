@@ -31,7 +31,9 @@ public class NetWorkChangeBroadcastReceiver extends BroadcastReceiver {
         ConnectivityManager connectivityManager=
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager!=null) {
-            if(noNetWorkNotice == null) noNetWorkNotice = NoNetWorkNotice.getInstance(activity);
+            if(noNetWorkNotice == null) {
+                noNetWorkNotice = NoNetWorkNotice.getInstance(activity);
+            }
             NetworkInfo[] networkInfos=connectivityManager.getAllNetworkInfo();
             for (NetworkInfo networkInfo : networkInfos) {
                 NetworkInfo.State state = networkInfo.getState();

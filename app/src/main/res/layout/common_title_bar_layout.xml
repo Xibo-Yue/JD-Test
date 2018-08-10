@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="@color/white"
+    android:layout_height="70dp"
+    android:background="@color/color_orange_red"
     android:gravity="center_vertical"
     android:orientation="horizontal">
 
     <ImageView
+        android:layout_marginTop="10dp"
         android:id="@+id/scanning_img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="13dp"
         android:src="@drawable/scanning_cmmon" />
 
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_weight="1"
@@ -48,9 +50,10 @@
     </LinearLayout>
 
     <ImageView
+        android:layout_marginTop="10dp"
         android:id="@+id/advisory_img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="13dp"
         android:src="@drawable/advisory_common" />
 

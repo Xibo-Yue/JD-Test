@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 
 import com.sxjs.common.base.BaseFragment;
 import com.sxjs.common.base.baseadapter.BaseQuickAdapter;
-import com.sxjs.common.statuscompat.StatusBarCompat;
 import com.sxjs.common.util.ScreenUtil;
 import com.sxjs.common.widget.headerview.JDHeaderView;
 import com.sxjs.common.widget.pulltorefresh.PtrFrameLayout;
@@ -73,10 +72,6 @@ public class MainHomeFragment extends BaseFragment implements JDHeaderView.Refre
      * 初始化下拉刷新及滚动距离title发生的改变
      */
     private void initBase() {
-
-        //让状态栏透明
-        StatusBarCompat.translucentStatusBar(getActivity(), true);
-
         DaggerHomeFragmentComponent.builder()
                 .appComponent(getAppComponent())
                 .homePresenterModule(new HomePresenterModule(this, MainDataManager.getInstance(mDataManager)))
